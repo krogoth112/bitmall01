@@ -1,0 +1,62 @@
+insert into BOARD_ARTICLE (NO, TITLE, USER_NO, CONTENT, VIEW_CNT, LIKE_CNT, DISLICK_CNT, REPLY_CNT, REG_DATE)
+
+insert (NO, TITLE, USER_NO, CONTENT, VIEW_CNT, LIKE_CNT, DISLICK_CNT, REPLY_CNT, REG_DATE) from BOARD_ARTICLE;
+
+insert (NO, TITLE, USER_NO, CONTENT, REG_DATE) into BOARD_ARTICLE 
+(BOARD_ARTICLE_SEQ, 'TITLEasdasdasd', '12', '', sysdate); 
+
+insert into BOARD_ARTICLE b, MEMBER m  (NO, TITLE, USER_NO, CONTENT, REG_DATE)
+values (BOARD_ARTICLE_SEQ.nextval, 'TITLEasdasdasd', '59', 'asdasdasdasd', sysdate);
+
+
+select a.no from (insert into MEMBER values (member_no_seq.nextval, 'asdasd', 'newmind3@gmail.com', 'asdsadasd', 'mele') a;
+
+delete 
+from BOARD_ARTICLE a   
+where a.USER_NO = (select no
+				from MEMBER
+				where no=57) and a.no = 32;
+				
+delete from BOARD_ARTICLE a where a.USER_NO = (select no from MEMBER where no=58) and a.no = 33;
+				
+
+commit;
+rollback;
+select * from BOARD_ARTICLE b;
+select * from MEMBER m;
+create table board_article 
+(
+	no number(15) not null,
+	title varchar2(100) not null,
+	user_no NUMBER(38) not null,
+	content varchar2(2000),
+	view_cnt number(38),
+	like_cnt number(38),
+	dislick_cnt number(38),
+	reply_cnt number(38),
+	reg_date date,
+	PRIMARY KEY (NO),
+	constraint MEMBER_fk foreign key ( user_no )
+	references member(NO) 
+);
+
+drop table board_article;
+
+CREATE TABLE MEMBER
+(
+   NO         NUMBER (8),
+   NAME       VARCHAR2 (30),
+   EMAIL      VARCHAR2 (80),
+   PASSWORD   VARCHAR2 (30),
+   GENDER     VARCHAR2 (10),
+   primary key (no)
+);
+
+delete from BOARD_ARTICLE where user_no = 1 and no = 5;
+select * from BOARD_ARTICLE b;
+select * from MEMBER m;
+
+
+
+
+
