@@ -27,7 +27,7 @@ public class UserController {
 
 	@RequestMapping("/member_join")
 	public String joinform() {
-		return "user/member_join11";
+		return "user/member_join";
 
 	}
 

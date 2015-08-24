@@ -8,3 +8,9 @@ START WITH 1
 MAXVALUE 9999999
 NOCACHE
 NOCYCLE;
+
+select * from MEMBER m;
+update MEMBER SET type='admin' where no=3;
+select * from CATEGORY_PRODUCT c;
+insert into CATEGORY_PRODUCT (NO, NAME) 
+VALUES(CATEGORY_PRODUCT_SEQ.nextval, 'mainboard');

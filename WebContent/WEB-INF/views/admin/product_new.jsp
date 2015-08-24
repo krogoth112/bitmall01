@@ -1,4 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
 	<title>쇼핑몰 관리자 홈페이지</title>
@@ -10,17 +14,17 @@
 <br>
 <jsp:include page="/include/admin-menu.jsp"/>
 <hr width='900' size='3'>
+
 <table width="800" border="1" cellspacing="0" cellpadding="3" bordercolordark="white" bordercolorlight="black">
 	<tr height="23"> 
 		<td width="100" bgcolor="#CCCCCC" align="center">상품분류</td>
     <td width="700" bgcolor="#F2F2F2">
-			<select name="menu">
+			<select name="menu" >
 				<option value="0" selected>상품분류를 선택하세요</option>
-				<option value="1">바지</option>
-				<option value="2">코트</option>
-				<option value="3">브라우스</option>
 			</select>
+			
 		</td>
+		<td> </td>
 	</tr>
 	<tr height="23"> 
 		<td width="100" bgcolor="#CCCCCC" align="center">상품코드</td>

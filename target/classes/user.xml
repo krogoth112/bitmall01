@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="user">
+	<typeAlias alias="UserVo" type="com.bit2015.bitvga.vo.UserVo" />
+	<resultMap class="UserVo" id="resultMapList">
+		<result column="no" property="no" />
+		<result column="email" property="email" />
+		<result column="password" property="password" />
+		<result column="name" property="name" />
+		<result column="phone_number" property="ph" />
+		<result column="zipcode" property="zipcode" />
+		<result column="address" property="address" />
+		<result column="status" property="status" />
+		<result column="type" property="type" />
+	</resultMap>
+	<insert id="insert" parameterClass="UserVo">
+		<![CDATA[
+			insert into MEMBER 
+			VALUES(member_seq.nextval, #email#, #password#, #name#, #ph#, #zipcode#, #address#, #status#, #type#)
+		]]>
+	</insert>
+
+	<select id="login" parameterClass="java.util.Map" resultClass="UserVo">
+		<![CDATA[
+			select NO, EMAIL, PASSWORD, NAME, PHONE_NUMBER as ph, ZIPCODE, ADDRESS, STATUS, TYPE 
+			from member 
+			where email=#email# 
+			and password=#password#
+		]]>
+	</select>
+	<update id="update" parameterClass="UserVo">
+	<![CDATA[
+		update MEMBER SET EMAIL=#email#, PASSWORD=#password#, NAME=#name#, PHONE_NUMBER=#ph#, ZIPCODE=#zipcode#, ADDRESS=#address# 
+		where no=#no#
+	]]>
+	</update>
+	<select id="list" resultMap="resultMapList">
+	<![CDATA[
+		select NO, EMAIL, PASSWORD, NAME, PHONE_NUMBER , ZIPCODE, ADDRESS, STATUS, TYPE 
+		from member
+		order by no desc
+	]]>
+	</select>
+	<select id="countrow" resultClass="java.lang.Integer">
+	<![CDATA[
+		select count(*)
+		from member
+	]]>
+	</select>
+
+	<delete id="delete" parameterClass="java.lang.Long">
+	 <![CDATA[
+		delete from member where no=#no#
+	]]>
+	</delete>
+</sqlMap>

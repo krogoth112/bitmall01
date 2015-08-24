@@ -1,5 +1,6 @@
 package com.bit2015.bitvga.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +19,7 @@ public class ProductService {
 	public List<ProductVo> list(){
 		return productDao.list();
 	}
-
+	public List categoryList(){
+		return productDao.categoryList();
+	}
 }

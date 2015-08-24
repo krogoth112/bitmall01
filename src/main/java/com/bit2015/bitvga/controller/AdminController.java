@@ -1,5 +1,6 @@
 package com.bit2015.bitvga.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,8 +56,14 @@ public class AdminController {
 		return "/admin/product";
 	}
 	@RequestMapping("/productnew")
-	public String productReg(){
+	public String productReg(Model model){
+//		List list = productService.categoryList();
+//		System.out.println(list.get(1));
+		List list = new ArrayList<>();
+		list.set(1, "이준기");
+		model.addAttribute("clist", list);
 		return "/admin/product_new";
 	}
+	
 
 }

@@ -18,5 +18,9 @@ public class ProductDao {
 		return sqlMapClientTemplate.queryForList("product.list");
 
 	}
+	public List categoryList() {
+		List list = sqlMapClientTemplate.queryForList("product.categorylist");
+		return list;
+	}
 
 }
