@@ -14,8 +14,6 @@
 		<result column="status" property="status" />
 		<result column="type" property="type" />
 	</resultMap>
-
-
 	<insert id="insert" parameterClass="UserVo">
 		<![CDATA[
 			insert into MEMBER 
@@ -56,11 +54,4 @@
 		delete from member where no=#no#
 	]]>
 	</delete>
-	
-
-
-
-
-
-
 </sqlMap>

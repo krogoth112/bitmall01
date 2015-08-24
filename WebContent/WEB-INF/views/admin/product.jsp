@@ -1,4 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
 	<title>쇼핑몰 관리자 홈페이지</title>
@@ -42,7 +46,7 @@
 		<td align="left" width="120" valign="bottom">
 			<input type="submit" value="검색">
 			&nbsp;
-			<a href="product_new.jsp"><input type="button" value="새상품"></a>
+			<a href="/sdaflkjhlkjh213219393243475873465876/productnew"><input type="button" value="새상품"></a>
 		</td>
 	</tr>
 	<tr><td height="5"></td></tr>
@@ -59,30 +63,20 @@
 		<td width="120" align="center">이벤트</td>
 		<td width="80"  align="center">수정/삭제</td>
 	</tr>
+	<c:forEach var="product" items="${productlist}" >
 	<tr bgcolor="#F2F2F2" height="23">	
-		<td width="100">&nbsp 코트</td>
-		<td width="100">&nbsp Coat001</td>
-		<td width="280">&nbsp 비싼 코트</td>	
-		<td width="70"  align="right">4,500,000 &nbsp</td>	
+		<td width="100">&nbsp ${product.PRODUCT_CATEGORY_NO}코트</td>
+		<td width="100">&nbsp ${product.PRODUCT_CATEGORY_NO }Coat001</td>
+		<td width="280">&nbsp ${product.PRODUCT_NAME}비싼 코트</td>	
+		<td width="70"  align="right">${PRODUCT_PRICE}4,500,000 &nbsp</td>	
 		<td width="50"  align="center">판매중</td>	
 		<td width="120" align="center">&nbsp New Hit Sale(10%)</td>	
 		<td width="80"  align="center">
-			<a href="product_edit.jsp">수정</a>/
-			<a href="#">삭제</a>
+			<a href="/sdaflkjhlkjh213219393243475873465876/productedit">수정</a>/
+			<a href="/sdaflkjhlkjh213219393243475873465876/productdelete">삭제</a>
 		</td>
 	</tr>
-	<tr bgcolor="#F2F2F2" height="23">	
-		<td width="100">&nbsp 코트</td>
-		<td width="100">&nbsp Coat001</td>
-		<td width="280">&nbsp 비싼 코트</td>	
-		<td width="70"  align="right">4,500,000 &nbsp</td>	
-		<td width="50"  align="center">판매중</td>	
-		<td width="120" align="center">&nbsp New Hit Sale(10%)</td>	
-		<td width="80"  align="center">
-			<a href="product_edit.jsp">수정</a>/
-			<a href="#">삭제</a>
-		</td>
-	</tr>	
+	</c:forEach>
 </table>
 
 <br>

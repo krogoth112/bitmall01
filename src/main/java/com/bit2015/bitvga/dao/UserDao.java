@@ -12,11 +12,11 @@ import org.springframework.stereotype.Repository;
 
 import com.bit2015.bitvga.vo.UserVo;
 
-@Repository("userDao")
+@Repository
 public class UserDao {
 
 	@Autowired	
-	SqlMapClientTemplate sqlMapClientTemplate;
+	private SqlMapClientTemplate sqlMapClientTemplate;
 
 	public void userInsert(UserVo userVo) {
 		

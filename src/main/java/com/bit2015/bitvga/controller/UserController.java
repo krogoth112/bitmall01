@@ -16,7 +16,7 @@ import com.bit2015.bitvga.vo.UserVo;
 public class UserController {
 
 	@Autowired
-	UserService userService;
+	private UserService userService;
 
 	@RequestMapping("/agree")
 	public String signupform() {
@@ -27,7 +27,7 @@ public class UserController {
 
 	@RequestMapping("/member_join")
 	public String joinform() {
-		return "user/member_join";
+		return "user/member_join11";
 
 	}
 

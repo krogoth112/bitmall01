@@ -10,12 +10,13 @@ import com.bit2015.bitvga.vo.ProductVo;
 
 @Repository
 public class ProductDao {
-	
+
 	@Autowired
 	private SqlMapClientTemplate sqlMapClientTemplate;
-	public List<ProductVo> list(){
+
+	public List<ProductVo> list() {
 		return sqlMapClientTemplate.queryForList("product.list");
-		
+
 	}
 
 }

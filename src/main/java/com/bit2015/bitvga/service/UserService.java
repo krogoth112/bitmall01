@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bit2015.bitvga.dao.UserDao;
-import com.bit2015.bitvga.vo.ProductVo;
 import com.bit2015.bitvga.vo.UserVo;
 
 @Service

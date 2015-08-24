@@ -13,7 +13,14 @@ public class ProductVo {
 	   private String IMAGE1;         
 	   private String IMAGE3;         
 	   private String IMAGE4;
+	   private String EVENT;
 	   
+	public String getEVENT() {
+		return EVENT;
+	}
+	public void setEVENT(String eVENT) {
+		EVENT = eVENT;
+	}
 	public Long getPRODUCT_NO() {
 		return PRODUCT_NO;
 	}
@@ -95,7 +102,7 @@ public class ProductVo {
 				+ ", REG_DATE=" + REG_DATE + ", PRODUCT_DCRATE="
 				+ PRODUCT_DCRATE + ", STOCK_QUANTITY=" + STOCK_QUANTITY
 				+ ", IMAGE1=" + IMAGE1 + ", IMAGE3=" + IMAGE3 + ", IMAGE4="
-				+ IMAGE4 + "]";
+				+ IMAGE4 + ", EVENT=" + EVENT + "]";
 	}
 	   
 
