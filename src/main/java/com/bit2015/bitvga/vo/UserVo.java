@@ -1,5 +1,7 @@
 package com.bit2015.bitvga.vo;
 
+import com.bit2015.bitvga.UserType;
+
 
 
 public class UserVo {
@@ -13,6 +15,15 @@ public class UserVo {
 	private String address;
 	private String status; // 'a' = avilable, 'd' =dormancy
 	private String type; // 'y'= admin
+	private String loginDate;
+
+	public String getLoginDate() {
+		return loginDate;
+	}
+
+	public void setLoginDate(String loginDate) {
+		this.loginDate = loginDate;
+	}
 
 	public Long getNo() {
 		return no;
@@ -74,8 +85,8 @@ public class UserVo {
 		return type;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setType(String customer) {
+		this.type = customer;
 	}
 
 	@Override

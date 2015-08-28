@@ -13,6 +13,7 @@
 		<result column="address" property="address" />
 		<result column="status" property="status" />
 		<result column="type" property="type" />
+		<result column="Recent_Login" property="loginDate" />
 	</resultMap>
 	<insert id="insert" parameterClass="UserVo">
 		<![CDATA[
@@ -23,12 +24,18 @@
 
 	<select id="login" parameterClass="java.util.Map" resultClass="UserVo">
 		<![CDATA[
-			select NO, EMAIL, PASSWORD, NAME, PHONE_NUMBER as ph, ZIPCODE, ADDRESS, STATUS, TYPE 
+			select NO, EMAIL, PASSWORD, NAME, PHONE_NUMBER as ph, ZIPCODE, ADDRESS, STATUS, TYPE  
 			from member 
 			where email=#email# 
 			and password=#password#
 		]]>
 	</select>
+	<update id="updatelogindate">
+		<![CDATA[
+			update MEMBER SET "Recent_Login"=sysdate
+		]]>
+	</update>
+
 	<update id="update" parameterClass="UserVo">
 	<![CDATA[
 		update MEMBER SET EMAIL=#email#, PASSWORD=#password#, NAME=#name#, PHONE_NUMBER=#ph#, ZIPCODE=#zipcode#, ADDRESS=#address# 

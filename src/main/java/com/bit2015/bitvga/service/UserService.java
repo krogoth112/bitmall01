@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bit2015.bitvga.AccountCondition;
+import com.bit2015.bitvga.UserType;
 import com.bit2015.bitvga.dao.UserDao;
 import com.bit2015.bitvga.vo.UserVo;
 
@@ -15,13 +17,17 @@ public class UserService {
 	UserDao userDao;
 
 	static final String status[] = { "avilable", "dormancy" };
-	static final String type[] = { "admin", "customer" };
+//	static final String type[] = { "admin", "customer" };
+	AccountCondition condition;
+	UserType type;
 
 	public void userInsert(UserVo userVo) {
 		// 활성화 처리
-		userVo.setStatus(status[0]);
+//		userVo.setStatus(status[0]);
+		userVo.setStatus(condition.ActiveAccount.name());
 		// 유저 타입 설정
-		userVo.setType(type[1]);
+//		userVo.setType(type[1]);
+		userVo.setType(type.Customer.name());
 		System.out.println(userVo);
 
 		userDao.userInsert(userVo);

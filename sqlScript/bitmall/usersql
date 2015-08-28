@@ -8,6 +8,7 @@ create TABLE member (
 	address varchar2(30) not null,
 	status varchar2(15) not null,
 	type varchar2(15) not null,
+	Recent_Login date,
 	primary key(no)
 	);
 CREATE TABLE ZIPCODE(

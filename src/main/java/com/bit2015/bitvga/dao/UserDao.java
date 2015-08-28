@@ -27,7 +27,9 @@ public class UserDao {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("email", email);
 		map.put("password", password);
-		return (UserVo) sqlMapClientTemplate.queryForObject("user.login", map);
+		UserVo userVo = (UserVo) sqlMapClientTemplate.queryForObject("user.login", map);
+		sqlMapClientTemplate.update("user.updatelogindate");
+		return userVo;
 	}
 
 	public void update(UserVo userVo) {
